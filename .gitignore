@@ -2,7 +2,9 @@
 .idea/
 gradle/
 build/
+out/
 *.iws
 *.iml
 *.ipr
 .DS_Store
+webapps/WEB-INF/classes/
