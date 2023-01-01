@@ -2,14 +2,17 @@ package org.example.mvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.example.mvc.annotation.Controller;
-import org.example.mvc.annotation.RequestMapping;
 
-@Controller
-public class HomeController {
+public class ForwardController implements Controller {
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    private final String forwardUri;
+
+    public ForwardController(final String forwardUri) {
+        this.forwardUri = forwardUri;
+    }
+
+    @Override
     public String handleRequest(final HttpServletRequest request, final HttpServletResponse response) throws Exception {
-        return "home";
+        return forwardUri;
     }
 }
